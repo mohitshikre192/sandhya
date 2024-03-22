@@ -1,0 +1,39 @@
+<div class="background-image">
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="menu" (click)="drawer_open()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <span>
+      <div style="margin-top: 10px;" class="container text-center ">
+        <img src="assets/logo.png" class="app-logo">
+      </div>
+    </span>
+    <span class="example-spacer"></span>
+    <span style="margin-left: auto;">
+      <mat-icon matBadge="{{ cartItemCount$ | async }}" matBadgeColor="warn" (click)="openCart()" aria-hidden="false">add_shopping_cart</mat-icon>
+      <span></span>
+      <button mat-button class="register-button"
+        routerLink="/auth/register">Register</button></span>
+    <button mat-button class="login-button" routerLink="/auth/login">Login</button>
+  </mat-toolbar>
+  <mat-drawer-container class="my-container">
+    <mat-drawer #drawer class="my-drawer" mode="side" [opened]="isDrawerOpen">
+      <mat-nav-list>
+        <mat-list-item>
+          <button mat-button (click)="selectMenu('fruits')">Fruits</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button (click)="selectMenu('vegetables')">Vegetables</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button (click)="selectMenu('snacks')">Snacks</button>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content class="background-image">
+      <app-item [selectedCategory]="selectedCategory"></app-item>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+</div>

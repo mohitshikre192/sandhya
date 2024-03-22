@@ -1,0 +1,91 @@
+<div class="item-card-container">
+  <div *ngIf="selectedCategory === 'fruits'">
+    <div class="item-row">
+      <div *ngFor="let item of fruits" class="item-card">
+        <mat-card class="item" style="height: 300px;width:250px; position: relative;">
+          <img mat-card-image [src]="item.imageUrl" alt="Product Image" class="item-image" style="height: 160px;">
+          <div class="item-details">
+            <h2 mat-card-title>{{ item.name }}</h2>
+            <p class="quantity">Quantity: {{ item.quantity }}</p>
+            <p class="price">Price: {{ item.price }}</p>
+            <p class="weight">Weight: {{ item.weight }} grams</p>
+            <div class="button-group"
+              style="position: absolute; bottom: 8px; right: 8px; display: flex; align-items: center;">
+              <button mat-icon-button class="add-icon"
+                style="background-color: rgb(240, 140, 140);width:30px; height: 27px; padding: 0px; margin-right: 8px;"
+                (click)="AddToCart(item)">
+                <mat-icon style="font-size: 16px;">add</mat-icon>
+              </button>
+              <span *ngIf="item.count !== undefined">{{ item.count }}</span>
+              <button mat-icon-button class="remove-icon" *ngIf="item.count !== undefined && item.count > 0"
+                style="background-color: rgb(240, 140, 140);width: 30px; height: 27px; padding: 0px; margin-right: 12px;margin-left: 12px;"
+                (click)="RemoveFromCart(item)">
+                <mat-icon style="font-size: 16px;">remove</mat-icon>
+              </button>
+            </div>
+
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selectedCategory === 'vegetables'">
+    <div class="item-row">
+      <div *ngFor="let item of vegetables" class="item-card">
+        <mat-card class="item" style="height: 300px;width:250px; position: relative;">
+          <img mat-card-image [src]="item.imageUrl" alt="Product Image" class="item-image" style="height: 160px;">
+          <div class="item-details">
+            <h2 mat-card-title>{{ item.name }}</h2>
+            <p class="quantity">Quantity: {{ item.quantity }}</p>
+            <p class="price">Price: ${{ item.price }}</p>
+            <p class="weight">Weight: {{ item.weight }} grams</p>
+            <div class="button-group"
+              style="position: absolute; bottom: 8px; right: 8px; display: flex; align-items: center;">
+              <button mat-icon-button class="add-icon"
+                style="background-color: rgb(240, 140, 140);width:30px; height: 27px; padding: 0px; margin-right: 8px;"
+                (click)="AddToCart(item)">
+                <mat-icon style="font-size: 16px;">add</mat-icon>
+              </button>
+              <span *ngIf="item.count !== undefined">{{ item.count }}</span>
+              <button mat-icon-button class="add-icon" *ngIf="item.count !== undefined && item.count > 0"
+                style="background-color: rgb(240, 140, 140);width: 30px; height: 27px; padding: 0px; margin-right: 12px;margin-left: 12px;"
+                (click)="RemoveFromCart(item)">
+                <mat-icon style="font-size: 16px;">remove</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="selectedCategory === 'snacks'">
+    <div class="item-row">
+      <div *ngFor="let item of snacks" class="item-card">
+        <mat-card class="item" style="height: 300px;width:250px; position: relative;">
+          <img mat-card-image [src]="item.imageUrl" alt="Product Image" class="item-image" style="height: 160px;">
+          <div class="item-details">
+            <h2 mat-card-title>{{ item.name }}</h2>
+            <p class="quantity">Quantity: {{ item.quantity }}</p>
+            <p class="price">Price: ${{ item.price }}</p>
+            <p class="weight">Weight: {{ item.weight }} grams</p>
+            <div class="button-group"
+              style="position: absolute; bottom: 8px; right: 8px; display: flex; align-items: center;">
+              <button mat-icon-button class="add-icon"
+                style="background-color: rgb(240, 140, 140);width:30px; height: 27px; padding: 0px; margin-right: 8px;"
+                (click)="AddToCart(item)">
+                <mat-icon style="font-size: 16px;">add</mat-icon>
+              </button>
+              <span *ngIf="item.count !== undefined">{{ item.count }}</span>
+              <button mat-icon-button class="add-icon" *ngIf="item.count !== undefined && item.count > 0"
+                style="background-color: rgb(240, 140, 140);width: 30px; height: 27px; padding: 0px; margin-right: 12px;margin-left: 12px;"
+                (click)="RemoveFromCart(item)">
+                <mat-icon style="font-size: 16px;">remove</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

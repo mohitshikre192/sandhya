@@ -1,0 +1,50 @@
+/* .background-image{
+  background-image: url('/assets/home.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+} */
+.app-logo {
+  height: 50px;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.my-container {
+  height: 100vh;
+}
+
+.my-drawer {
+  width: 200px;
+  background-color:  rgb(216, 178, 132);
+}
+
+.background-image{
+  background-color: rgba(235, 158, 242, 0.9);
+}
+
+.login-button {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  background-color: green;
+
+}
+
+.register-button {
+  background-color: #4310b9;
+
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}

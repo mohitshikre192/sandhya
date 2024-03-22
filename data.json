@@ -1,0 +1,8 @@
+{
+  "groceryItems": [
+  { "id": 1, "name": "Apples", "price": 1.99, "category": "Fruit" },
+  { "id": 2, "name": "Bananas", "price": 0.99, "category": "Fruit" },
+  { "id": 3, "name": "Milk", "price": 2.49, "category": "Dairy" },
+  { "id": 4, "name": "Bread", "price": 1.49, "category": "Bakery" }
+]
+}
